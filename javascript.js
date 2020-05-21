@@ -1,9 +1,17 @@
 /* Using the NYT activity as a reference */
 
+//Function to get current date and time.
+$(document).ready(function() {
+	//getting the current day and added a new format
+	$('#currentDay').text(moment().format('dddd, MMMM Do YYYY'));
+	//target tbody to manipulate the table rows ... and more
+	var tbody = $('#calendar-content');
+});
+
 /**
- * pulls information from the form and build the query URL
- * @returns {string} URL for NYT API based on form inputs
- */
+	 * pulls information from the form and build the query URL
+	 * @returns {string} URL for NYT API based on form inputs
+	 */
 function buildQueryURL() {
 	// queryURL is the url we'll use to query the API
 	var queryURL =
@@ -37,9 +45,9 @@ function buildQueryURL() {
 }
 
 /**
- * takes API data (JSON/object) and turns it into elements on the page
- * @param {object} NYTData - object containing NYT API data
- */
+	 * takes API data (JSON/object) and turns it into elements on the page
+	 * @param {object} NYTData - object containing NYT API data
+	 */
 function updatePage(NYTData) {
 	// Get from the form the number of results to display
 	// API doesn't have a "limit" parameter, so we have to do this ourselves
@@ -140,5 +148,5 @@ $('#run-search').on('click', function(event) {
 	}).then(updatePage);
 });
 
-//  .on("click") function associated with the clear button
-$('#clear-all').on('click', clear);
+// //  .on("click") function associated with the clear button
+// $('#clear-all').on('click', clear);
