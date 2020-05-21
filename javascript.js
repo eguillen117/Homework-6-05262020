@@ -1,13 +1,13 @@
 /* Using the NYT activity as a reference */
 
-//Function to get current date and time.
+//Function to get current date and time=============================
 $(document).ready(function() {
 	//getting the current day and added a new format
 	$('#currentDay').text(moment().format('dddd, MMMM Do YYYY'));
 	//target tbody to manipulate the table rows ... and more
 	var tbody = $('#calendar-content');
 });
-
+// END OF current day function to get present date=============================================================
 /**
 	 * pulls information from the form and build the query URL
 	 * @returns {string} URL for NYT API based on form inputs
