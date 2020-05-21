@@ -9,13 +9,25 @@ $(document).ready(function() {
 });
 // END OF current day function to get present date=============================================================
 /**
+ * 
+ * 
+ * 
 	 * pulls information from the form and build the query URL
 	 * @returns {string} URL for NYT API based on form inputs
 	 */
+
+function gettingJSON() {
+	document.write('jquery loaded');
+	$.getJSON(
+		'http://api.openweathermap.org/data/2.5/weather?q=London&APPID=ee6596241130f193adf1ba90e625cc10',
+		function(json) {
+			document.write(JSON.stringify(json));
+		}
+	);
+}
 function buildQueryURL() {
 	// queryURL is the url we'll use to query the API
-	var queryURL =
-		'pro.openweathermap.org/data/2.5/forecast/hourly?id={city ID}&appid=46e6f2e7796e9e6d3d3f2cc4d3f59ec2';
+	var queryURL = 'pro.openweathermap.org/data/2.5/forecast/hourly?id={London}&appid=46e6f2e7796e9e6d3d3f2cc4d3f59ec2';
 
 	// Begin building an object to contain our API call's query parameters
 	// Set the API key
