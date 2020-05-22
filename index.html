@@ -46,7 +46,7 @@
                     <div class="card-header">
                         <strong>
                             <i class="fas fa-cloud-sun-rain"></i> Search for a City</strong>
-                        <form role="form">
+                        <form id="cityForm">
 
                             <!-- Here we create the text box for capturing the search term-->
                             <div class="form-group">
@@ -76,7 +76,7 @@
             <div class="col-sm-8 text-left">
                 <p id="currentDay" class="lead"></p>
                 <h1>Atlanta</h1>
-                <li>Temperature: 90</li>
+                <li>Temperature: <span id="temperature"> </span> </li>
                 <li>Humdity: 40%</li>
                 <li> Wind Speed : 4.7MPH</li>
                 <li>UV Index - 9.49</li>
@@ -149,6 +149,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
     <script src="javascript.js" async defer></script>
+
+
 </body>
 
 </html>
