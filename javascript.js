@@ -33,14 +33,21 @@ function gettingJSON(searchTerm) {
 			// document.write(JSON.stringify(json));
 			console.log(json);
 			$('#temperature').text(json.main.temp);
+			$('#humidity').text(json.main.humidity);
+			$('#windSpeed').text(json.wind.speed);
 		}
 	);
 }
 
+// function gettingJSON(searchTerm) {
+// 	$.getJSON(
+// 		'http://api.openweathermap.org/data/2.5/weather?q=' +
+// 			searchTerm +
+// 			'&units=imperial&APPID=46e6f2e7796e9e6d3d3f2cc4d3f59ec2',
+// $('#uvIndex').text(json.main.temp);
+
 //CREATE A NEW FUNCTION FOR THE 5 DAY. SEPERATE URL
-//OPEN WEATHER API ON THE DOCUMENTATION THEY HAVE ANOTHER ONE FOR FORECAST. 
-
-
+//OPEN WEATHER API ON THE DOCUMENTATION THEY HAVE ANOTHER ONE FOR FORECAST.
 
 // function buildQueryURL() {
 // 	// queryURL is the url we'll use to query the API
