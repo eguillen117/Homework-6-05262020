@@ -16,13 +16,6 @@ $(document).ready(function() {
 	});
 });
 // END OF current day function to get present date=============================================================
-/**
- * 
- * 
- * 
-	 * pulls information from the form and build the query URL
-	 * @returns {string} URL for NYT API based on form inputs
-	 */
 
 function gettingJSON(searchTerm) {
 	$.getJSON(
@@ -35,16 +28,28 @@ function gettingJSON(searchTerm) {
 			$('#temperature').text(json.main.temp);
 			$('#humidity').text(json.main.humidity);
 			$('#windSpeed').text(json.wind.speed);
+			$('#cityName').text(searchTerm);
 		}
 	);
 }
 
-// function gettingJSON(searchTerm) {
-// 	$.getJSON(
-// 		'http://api.openweathermap.org/data/2.5/weather?q=' +
-// 			searchTerm +
-// 			'&units=imperial&APPID=46e6f2e7796e9e6d3d3f2cc4d3f59ec2',
-// $('#uvIndex').text(json.main.temp);
+//How do I create UV Index API?
+//I need - LAT, LONG, AND then also use this API?
+//By geographic coordinates
+// API call:
+// http://api.openweathermap.org/data/2.5/uvi?appid={appid}&lat={lat}&lon={lon}
+// Parameters:
+// appid - personal API key
+
+
+// ==========
+
+
+
+// lat, lon - coordinates of the location of your interest (latitude/longitude)
+
+// Examples of API calls:
+// api.openweathermap.org/data/2.5/uvi?lat=37.75&lon=-122.37
 
 //CREATE A NEW FUNCTION FOR THE 5 DAY. SEPERATE URL
 //OPEN WEATHER API ON THE DOCUMENTATION THEY HAVE ANOTHER ONE FOR FORECAST.
