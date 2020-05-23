@@ -1,20 +1,19 @@
 //Creating Var
-var apiUvIndex =
-	//Function to get current date and time=============================
-	$(document).ready(function() {
-		//getting the current day and added a new format
-		$('#currentDay').text(moment().format('dddd, MMMM Do YYYY'));
-		//target tbody to manipulate the table rows ... and more
-		var tbody = $('#calendar-content');
+//Function to get current date and time=============================
+$(document).ready(function() {
+	//getting the current day and added a new format
+	$('#currentDay').text(moment().format('dddd, MMMM Do YYYY'));
+	//target tbody to manipulate the table rows ... and more
+	var tbody = $('#calendar-content');
 
-		$('#cityForm').on('submit', function(event) {
-			//Code below prevents the page reloading
-			event.preventDefault();
-			var searchTerm = $('#search-term').val().trim();
-			console.log(searchTerm);
-			gettingJSON(searchTerm);
-		});
+	$('#cityForm').on('submit', function(event) {
+		//Code below prevents the page reloading
+		event.preventDefault();
+		var searchTerm = $('#search-term').val().trim();
+		console.log(searchTerm);
+		gettingJSON(searchTerm);
 	});
+});
 // END OF current day function to get present date=============================================================
 
 function gettingJSON(searchTerm) {
@@ -33,13 +32,13 @@ function gettingJSON(searchTerm) {
 	);
 }
 
-$('#cityForm').on('submit', function(event) {
-	//Code below prevents the page reloading
-	event.preventDefault();
-	var searchTerm = $('#search-term').val().trim();
-	console.log(searchTerm);
-	gettingJSON(searchTerm);
-});
+// $('#cityForm').on('submit', function(event) {
+// 	//Code below prevents the page reloading
+// 	event.preventDefault();
+// 	var searchTerm = $('#search-term').val().trim();
+// 	console.log(searchTerm);
+// 	gettingJSON(searchTerm);
+// });
 
 // function gettingJSON(fiveDayForecast) {
 // 	$.getJSON(
