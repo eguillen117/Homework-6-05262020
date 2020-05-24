@@ -38,11 +38,20 @@ $('#cityForm').on('submit', function(event) {
 				$('#cityName').text(searchTerm);
 			}
 		);
-	}
 
-	$.getJSON(
-		'https://api.weatherapi.com/v1/forecast.json?key=46e6f2e7796e9e6d3d3f2cc4d3f59ec2&q=' + searchTerm + '&days=6'
-	);
+		$.getJSON(
+			'http://api.openweathermap.org/data/forecast.json?key=46e6f2e7796e9e6d3d3f2cc4d3f59ec2&q=' +
+				searchTerm +
+				'&days=1',
+			function(json) {
+				var cityName = json.location.name;
+				var date = new Date(json.location.localtime).toDateString();
+				var uv = json.current.uv;
+
+				$('#temperature1').text(json.current.temp_f);
+			}
+		);
+	}
 });
 
 // $('#cityForm').on('submit', function(event) {
@@ -64,51 +73,3 @@ $('#cityForm').on('submit', function(event) {
 // 			$('#temperature1').text(json.main.temp);
 // 			$('#humidity1').text(json.main.humidity);
 // 		}
-// 	);
-// }
-
-// // Start of function to post 5 days
-// function fiveDayForecast(searchTerm) {
-// 	$.getJSON(
-// // function (json) {
-// 	var cityName = json.location.name;
-// 	var cityName = json.location.name;
-// 	var date = new Date(json.location.localtime).toDateString();
-// 	var iconUrl = 'https:' + json.forecast.forecastday[0].day.condition.icon;
-// 	var uv = json.current.uv;
-
-// // I AM GOING TO ATTEMPT TO DO DAY BY DAY FOR THE 5 DAY FORECAST
-// $('#cityForm').on('submit', function (event) {
-// 	//Code below prevents the page reloading
-// 	event.preventDefault();
-// 	var searchTerm = $('#search-term').val().trim();
-
-// 	function gettingJSON(searchTerm) {
-// 		$.getJSON(
-// 			'https://api.weatherapi.com/v1/forecast.json?key=46e6f2e7796e9e6d3d3f2cc4d3f59ec2&q=' +
-// 			searchTerm + '&days=6',
-// 			function (json) {
-// 				// document.write(JSON.stringify(json));
-// 				$('#temperature1').text(json.main.temp);
-// 				$('#humidity1').text(json.main.humidity);
-
-// 			}
-// 		);
-// 	}
-
-// 	function Day2(searchTerm) {
-// 		$.getJSON(
-// 			'https://api.weatherapi.com/v1/forecast.json?key=46e6f2e7796e9e6d3d3f2cc4d3f59ec2&q=' +
-// 			searchTerm +
-// 			'&days=6',
-
-// 			function (json) {
-// 				// document.write(JSON.stringify(json));
-// 				$('#temperature2').text(json.main.temp);
-// 				$('#humidity2').text(json.main.humidity);
-
-// 			}
-// 		);
-// 	};
-
-// };
