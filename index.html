@@ -41,7 +41,7 @@
                                 <!-- Here we create the text box for capturing the search term-->
                                 <div class="form-group">
                                     <!-- ID FOR SEARCHING CITY IS SEARCH-TERM -->
-                                    <input type="text" class="form-control" id="search-term">
+                                    <input type="text" class="searchCity" id="searchCity">
                                 </div>
 
                                 <!-- Here we have the submit button to find a city -->
@@ -73,62 +73,57 @@
                     <li>UV Index: <span id=uvIndex"></span></li>
                     <h3>5 Day forecast</h3>
 
+                    <!-- Row 2, Column 2, Row b - 5-day Forecast Title -->
                     <div class="row">
                         <div class="col-sm-12">
-                            <div class="row cardArea" <div class="col-sm-2 d-flex pt-3 justify-content-around">
-                                <div class="card col-2 mr-1 bg-primary text-white"
-                                    style="height: 150px; border: 1px solid black;opacity: 0.95;">
-                                    <h5> Day 1 <span id="day1"></span></h5>
-                                    <br>
-                                    <p id="currentDay" class="lead"></p>
-                                    <h1><span id="cityName"></span></h1>
-                                    <li>Temp: <span id="temperature1"></span>°F</li>
-                                    <li>Humidity: <span id="humidity1"></span>%
-                                    </li>
+                            <div class="forecastTitle">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Row 2, Column 2, Row c - 5-day Forecast Cards -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="row cardArea">
+                                <div class="col-sm-2.2">
+                                    <div class="card forecast-01">
+                                        <div class="card-body bg-info">
+                                            <p>Day one</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                </ </div>
-                                <div class="card col-2 mr-1 bg-primary text-white"
-                                    style="height: 150px; border: 1px solid black;opacity:.9">
-                                    <h5> Day 2 <span id="day1"></span></h5>
-                                    <br>
-                                    <p id="currentDay" class="lead"></p>
-                                    <h1><span id="cityName"></span></h1>
-                                    <li>Temp: <span id="temperature2"> </span> </li>
-                                    <li>Humidity: <span id="humidity2"></span>
-                                    </li>
+                                <div class="col-sm-0.25 background-color:black"></div>
+                                <div class="col-sm-2.2">
+                                    <div class="card forecast-02">
+                                        <div class="card-body bg-info">
+                                            <p>Day Two</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="card col-2 mr-1 bg-primary text-white"
-                                    style="height: 150px; border: 1px solid black;opacity:.9">
-                                    <h5> Day 3 <span id="day1"></span></h5>
-                                    <br>
-                                    <p id="currentDay" class="lead"></p>
-                                    <h1><span id="cityName"></span></h1>
-                                    <li>Temp: <span id="temperature"> </span> </li>
-                                    <li>Humidity: <span id="humidity"></span>
-                                    </li>
+                                <div class="col-sm-0.25"></div>
+                                <div class="col-sm-2.2">
+                                    <div class="card forecast-03">
+                                        <div class="card-body bg-info" id="cardBody">
+                                            <p>Day Three</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="card col-2 mr-1 bg-primary text-white"
-                                    style="height: 150px; border: 1px solid black;opacity:.9">
-                                    <h5> Day 4<span id="day2"></span></h5>
-                                    <br>
-                                    <p id="currentDay" class="lead"></p>
-                                    <h1><span id="cityName"></span></h1>
-                                    <li>Temp: <span id="temperature"> </span> </li>
-                                    <li>Humidity: <span id="humidity"></span>
-                                    </li>
+                                <div class="col-sm-0.25"></div>
+                                <div class="col-sm-2.2">
+                                    <div class="card forecast-04">
+                                        <div class="card-body bg-info">
+                                            <p>Day Four</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="card col-2 mr-1 bg-primary text-white"
-                                    style="height: 150px; border: 1px solid black; opacity:.9">
-                                    <h5> Day 5 <span id="day1"></span></h5>
-                                    <br>
-                                    <p id="currentDay" class="lead"></p>
-                                    <h1><span id="cityName"></span></h1>
-                                    <li>Temp: <span id="temperature"> </span> </li>
-                                    <li>Humidity: <span id="humidity"></span>
-                                    </li>
+                                <div class="col-sm-0.25"></div>
+                                <div class="col-sm-2.2">
+                                    <div class="card forecast-05">
+                                        <div class="card-body bg-info">
+                                            <p>Day Five</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
