@@ -3,11 +3,11 @@ var storedCity = '';
 var searchTerm = [];
 var ForecastURL = 'http://api.weatherapi.com/v1/forecast.json?key=46e6f2e7796e9e6d3d3f2cc4d3f59ec2&q=';
 var apiUvIndex = 'http://api.openweathermap.org/data/2.5/uvi?';
-var day1 = 1;
-var day2 = 2;
-var day3 = 3;
-var day4 = 4;
-var day5 = 5;
+var ForecastDay1 = 1;
+var ForecastDay2 = 2;
+var ForecastDay3 = 3;
+var ForecastDay4 = 4;
+var ForecastDay5 = 5;
 
 //Function to get current date and time=============================
 $(document).ready(function() {
