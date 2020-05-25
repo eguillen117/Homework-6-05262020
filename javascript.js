@@ -14,11 +14,14 @@ $(document).ready(function() {
 	$('#currentDay').text(moment().format('dddd, MMMM Do YYYY'));
 	//======= Present date and time display========
 
-	let searchTerm = $('.search-term');
+	// variable selectors
+	var searchTerm = $('.search-term');
 
-	let searchButton = $('.run-search');
+	var searchButton = $('.run-search');
+	let weatherArea = $('.weatherArea');
+	let forecastArea = $('.cardArea');
 
-	//Function that starts and cleans up value entered in search term.
+	//USER ENTERS BUTTON - Function that starts and cleans up value entered in search term.
 	$('#cityForm').on('submit', function(event) {
 		//Code below prevents the page reloading and messing up the function
 		event.preventDefault();
