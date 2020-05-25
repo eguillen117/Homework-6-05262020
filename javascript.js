@@ -1,11 +1,6 @@
 // Creating variables to be able store local storage and References
 var ForecastURL = 'http://api.weatherapi.com/v1/forecast.json?key=46e6f2e7796e9e6d3d3f2cc4d3f59ec2&q=';
 var apiUvIndex = 'http://api.openweathermap.org/data/2.5/uvi?';
-var ForecastDay1 = 1;
-var ForecastDay2 = 2;
-var ForecastDay3 = 3;
-var ForecastDay4 = 4;
-var ForecastDay5 = 5;
 
 //START OF FUNCTIONS=================================
 $(document).ready(function() {
@@ -60,7 +55,6 @@ $(document).ready(function() {
 				//Function to display for the 5 days of forecast
 				for (var i in response.list) {
 					if (i > 0 && response.list[i].dt_txt.indexOf('12:00') > -1) {
-						
 						// foreCast va
 						var forecastTempC = (response.list[i].main.temp - 273.15).toFixed(2);
 
@@ -72,7 +66,7 @@ $(document).ready(function() {
 							'</p>',
 							"<img src = 'http://openweathermap.org/img/wn/" +
 								response.list[i].weather[0].icon +
-								"@2x.png'>", 
+								"@2x.png'>",
 							'<p> Temp: ',
 
 							forecastTempC,
@@ -94,6 +88,20 @@ $(document).ready(function() {
 				// Display forecast data in forecastArea
 				$(forecastArea).html(forecastData);
 				$(searchCity).val('');
+			});
+
+			$.ajax({
+				url:
+					'http://api.openweathermap.org/data/2.5/uvi' +
+					`lat=${lat}` +
+					`&lon=${lon}` +
+					'&appid=46e6f2e7796e9e6d3d3f2cc4d3f59ec2',
+
+				method: 'GET',
+				dataType: 'jsonp'
+				// Jquery to get response and data
+			}).then(function(response) {
+				console.log(response);
 			});
 		}
 	});
