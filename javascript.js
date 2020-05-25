@@ -1,6 +1,4 @@
 // Creating variables to be able store local storage and References
-var storedCity = '';
-var searchTerm = [];
 var ForecastURL = 'http://api.weatherapi.com/v1/forecast.json?key=46e6f2e7796e9e6d3d3f2cc4d3f59ec2&q=';
 var apiUvIndex = 'http://api.openweathermap.org/data/2.5/uvi?';
 var ForecastDay1 = 1;
@@ -15,6 +13,8 @@ $(document).ready(function() {
 	//getting the current day and added a new format
 	$('#currentDay').text(moment().format('dddd, MMMM Do YYYY'));
 	//======= Present date and time display========
+
+	let searchedCity = $('.searchCity');
 
 	//Function that starts and cleans up value entered in search term.
 	$('#cityForm').on('submit', function(event) {
