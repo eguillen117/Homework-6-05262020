@@ -51,8 +51,49 @@ $(document).ready(function() {
 					'&appid=46e6f2e7796e9e6d3d3f2cc4d3f59ec2',
 				method: 'GET',
 				dataType: 'jsonp'
+				// Jquery to get response and data
 			}).then(function(response) {
 				console.log(response);
+
+				var forecastData = '';
+
+				//Function to display for the 5 days of forecast
+				for (var i in response.list) {
+					if (i > 0 && response.list[i].dt_txt.indexOf('12:00') > -1) {
+						
+						// foreCast va
+						var forecastTempC = (response.list[i].main.temp - 273.15).toFixed(2);
+
+						var forecastArray = [
+							"<div class = 'col-sm-2 day'>",
+							"<p class = 'forecastDay'>",
+
+							response.list[i].dt_txt.split(' ')[0],
+							'</p>',
+							"<img src = 'http://openweathermap.org/img/wn/" +
+								response.list[i].weather[0].icon +
+								"@2x.png'>", 
+							'<p> Temp: ',
+
+							forecastTempC,
+							' °F </p>',
+							'<p> Humidity: ',
+
+							response.list[i].main.humidity,
+							'%</p>',
+							'<p> Wind Speed: ',
+
+							response.list[i].wind.speed, //NOT response.list[i].main.wind.speed,
+							' mph</p>',
+							'</div>'
+						];
+						// Add forecast Data to forecastArray
+						forecastData += forecastArray.join('');
+					}
+				}
+				// Display forecast data in forecastArea
+				$(forecastArea).html(forecastData);
+				$(searchCity).val('');
 			});
 		}
 	});
