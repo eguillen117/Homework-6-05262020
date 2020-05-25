@@ -28,7 +28,7 @@ $(document).ready(function() {
 		var searchCity = $('#searchCity').val().trim();
 		console.log(searchCity);
 		gettingJSON(searchCity);
-		// Function below is to get present day forecast - Missing UV Index - 
+		// Function below is to get present day forecast - Missing UV Index -
 		function gettingJSON(searchCity) {
 			$.getJSON(
 				'http://api.openweathermap.org/data/2.5/weather?q=' +
@@ -43,14 +43,20 @@ $(document).ready(function() {
 					console.log(json);
 				}
 			);
-
-			
-
-
+			// Function to get 5 day forecast
+			$.ajax({
+				url:
+					'https://api.openweathermap.org/data/2.5/forecast?q=' +
+					searchCity +
+					'&appid=46e6f2e7796e9e6d3d3f2cc4d3f59ec2',
+				method: 'GET',
+				dataType: 'jsonp'
+			}).then(function(response) {
+				console.log(response);
+			});
 		}
 	});
 });
-
 
 // THIS Function below does not work I am tyring to do 5 day forecast
 // 			function gettingJSON(searchTerm) {
