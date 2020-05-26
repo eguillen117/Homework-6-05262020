@@ -9,7 +9,7 @@ $(document).ready(function() {
 	$('#currentDay').text(moment().format('dddd, MMMM Do YYYY'));
 	//======= Present date and time display========
 
-	// variable selectors
+	// Global Variables to run and display later
 	var searchCity = $('.searchCity');
 
 	var searchButton = $('.run-search');
@@ -46,16 +46,16 @@ $(document).ready(function() {
 					'&appid=46e6f2e7796e9e6d3d3f2cc4d3f59ec2',
 				method: 'GET',
 				dataType: 'jsonp'
-				// Jquery to get response and data
+				// Reponse and console.log to get data.
 			}).then(function(response) {
 				console.log(response);
 
 				var forecastData = '';
 
-				//Function to display for the 5 days of forecast
+				//Function to display 5 days of forecast
 				for (var i in response.list) {
 					if (i > 0 && response.list[i].dt_txt.indexOf('12:00') > -1) {
-						// foreCast va
+						// variable created to get response and convert to Celsius
 						var forecastTempC = (response.list[i].main.temp - 273.15).toFixed(2);
 
 						var forecastArray = [
@@ -99,29 +99,14 @@ $(document).ready(function() {
 
 				method: 'GET',
 				dataType: 'jsonp'
+
 				// Jquery to get response and data
 			}).then(function(response) {
 				console.log(response);
+				//Trying to figure out how to create variables for lat and lon.
+				var lat = json.coord.lat;
+				var lon = json.coord.lon;
 			});
 		}
 	});
 });
-
-// THIS Function below does not work I am tyring to do 5 day forecast
-// 			function gettingJSON(searchTerm) {
-// 				$.getJSON(
-// 					`https://api.weatherapi.com/v1/forecast.json?key=&q=46e6f2e7796e9e6d3d3f2cc4d3f59ec2` +
-// 						searchTerm +
-// 						`&days=6`,
-// 					function(json) {
-// 						var cityName = json.location.name;
-// 						var date = new Date(json.location.localtime).toDateString();
-// 						var uv = json.current.uv;
-
-// 						$('#temperature1').text(json.current.temp_f);
-// 						$('#humidity1').text(json.current.humidity);
-// 						console.log(searchTerm);
-// 					}
-// 				);
-// 			}
-// 		}
