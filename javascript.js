@@ -38,7 +38,7 @@ $(document).ready(function() {
 					console.log(json);
 				}
 			);
-			// Function to get 5 day forecast
+			// Function to get 5 day forecast =====================================
 			$.ajax({
 				url:
 					'https://api.openweathermap.org/data/2.5/forecast?q=' +
@@ -52,11 +52,11 @@ $(document).ready(function() {
 
 				var forecastData = '';
 
-				//Function to display 5 days of forecast
+				//Function to display 5 days of forecast ==================
 				for (var i in response.list) {
 					if (i > 0 && response.list[i].dt_txt.indexOf('12:00') > -1) {
-						// variable created to get response and convert to Celsius
-						var forecastTempC = (response.list[i].main.temp - 273.15).toFixed(2);
+						// Forecast Temperature
+						var forecastTempF = (response.list[i].main.temp * 1.8 - 459.67).toFixed(2);
 
 						var forecastArray = [
 							"<div class = 'col-sm-2 day'>",
@@ -69,7 +69,7 @@ $(document).ready(function() {
 								"@2x.png'>",
 							'<p> Temp: ',
 
-							forecastTempC,
+							forecastTempF,
 							' °F </p>',
 							'<p> Humidity: ',
 
@@ -77,7 +77,7 @@ $(document).ready(function() {
 							'%</p>',
 							'<p> Wind Speed: ',
 
-							response.list[i].wind.speed, //NOT response.list[i].main.wind.speed,
+							response.list[i].wind.speed,
 							' mph</p>',
 							'</div>'
 						];
