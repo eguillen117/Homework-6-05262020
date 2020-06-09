@@ -6,9 +6,9 @@ updated HTML and CSS.
 We used the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for cities. 
 
 Getting Started
-To access the webpages please visit https://eguillen117.github.io/Homework-6-05262020/
+To access the webpages please visit https://eguillen2305.github.io/Homework-6-05262020/
 
-To access the raw code you may visit github https://github.com/eguillen117/Homework-6-05262020
+To access the raw code you may visit github https://github.com/eguillen2035/Homework-6-05262020
 
 Prerequisites
 Working Web Broswer
