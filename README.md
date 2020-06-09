@@ -21,7 +21,7 @@ Built With Visual Studio Code
 [JavaScript]
 [CSS and HTML]
 Authors
-**Eduardo Guillen ** - [UTSA BCS](https://github.com/eguillen117
+**Eduardo Guillen ** - [UTSA BCS](https://github.com/eguillen2035
 License
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
