@@ -54,5 +54,15 @@ WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 WHEN I open the weather dashboard
 THEN I am presented with the last searched city forecast
+
 ```
+## Technology Used
+Javascript
+ 
+
+## Author
+eguillen2035
+
+## License
+This project is licensed under the terms of the **MIT** license.
 
