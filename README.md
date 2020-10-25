@@ -1,20 +1,20 @@
-#Unit 06 Server-Side APIs: Weather Dashboard
+# Server-Side APIs: Weather Dashboard
 
 For this assignment we were challenged to build a weather dashboard that will run in the browser and feature dynamically
 updated HTML and CSS.
 
 We used the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for cities. 
 
-Getting Started
+# Summary
+Simple Front-End application showing 5 day weather forecast. Created from scratch.  
+
+# Getting Started
 To access the webpages please visit https://eguillen2305.github.io/Homework-6-05262020/
 
 To access the raw code you may visit github https://github.com/eguillen2035/Homework-6-05262020
 
-Prerequisites
-Working Web Broswer
 
 
-## Screenshots and Examples
 
 Built With Visual Studio Code
 [VCS]
